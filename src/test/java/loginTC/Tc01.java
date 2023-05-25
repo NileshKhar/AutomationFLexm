@@ -19,7 +19,7 @@ public class Tc01
 	@Test
 	public void Tc01_VerifyLogin() throws InterruptedException, IOException 
 	{
-		
+		//Valid Email and Pass
 		
 		WebDriverManager.chromedriver().setup();
 		

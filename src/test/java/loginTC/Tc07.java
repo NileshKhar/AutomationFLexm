@@ -1,6 +1,5 @@
 package loginTC;
 
-import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -8,21 +7,22 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import loginPOM.LoginPg01;
 import loginUtility.Screenshots;
 
-public class Tc06 
+public class Tc07 
 {
-
 	@Test
 	public void Tc04_VerifyLogin() throws InterruptedException, IOException 
 	{
-		// Blank mail Valid Pass
-
+		// Blank mail Blank Pass
+		
 		WebDriverManager.chromedriver().setup();
 		
-		Logger log = Logger.getLogger(Tc06.class);
+		Logger log = Logger.getLogger(Tc07.class);
 		PropertyConfigurator.configure("log4j.properties");
 		
 		WebDriver driver = new ChromeDriver();
@@ -41,14 +41,14 @@ public class Tc06
 		lp.sendUsername("");
 		log.info("Username Entered");
 		
-		lp.sendPassword("Nilesh@2023");
+		lp.sendPassword("");
 		log.info("Password Entered");
 		
 		lp.clickLoginBtn();
 		log.info("Login Button clicked");
 		
 		Thread.sleep(5000);
-		Screenshots.screenShot(driver,"Loginpg6");
+		Screenshots.screenShot(driver,"Loginpg7");
 		
 		String expectedURL = "https://flexremit-dev.flexm.com/customer/#/dashboard";
 		String actualURL = driver.getCurrentUrl();
@@ -65,6 +65,8 @@ public class Tc06
 			log.info("Login test failed");
 			String errorUn = lp.usernameErrorMsg();
 			log.info("Errror msg - "+ errorUn);
+			String errorPs = lp.passwordErrorMsg();
+			log.info("Errror msg - "+ errorPs);
 		}
 		
 		
@@ -73,5 +75,4 @@ public class Tc06
 }
 
 	
-
 }

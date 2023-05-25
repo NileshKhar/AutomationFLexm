@@ -13,6 +13,7 @@
       <class name="loginTC.Tc04"/>
       <class name="loginTC.Tc05"/>
       <class name="loginTC.Tc06"/>
+      <class name="loginTC.Tc07"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

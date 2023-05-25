@@ -48,7 +48,7 @@ public class Tc03
 		log.info("Login Button clicked");
 		
 		Thread.sleep(5000);
-		Screenshots.screenShot(driver,"Loginpg1");
+		Screenshots.screenShot(driver,"Loginpg3");
 		
 		String expectedURL = "https://flexremit-dev.flexm.com/customer/#/dashboard";
 		String actualURL = driver.getCurrentUrl();
